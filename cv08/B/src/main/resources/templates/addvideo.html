@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title> Pridanie videa </title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+</head>
+<body>
+
+  <form action="#" method="post" th:action="@{/videolibrary}" th:object="${video}">
+
+    <p>Adresa: </p>
+    <input type="text" th:field="*{URL}"></p>
+    <p>Název: </p>
+    <input type="text" th:field="*{name}"></p>
+    <p><input type="submit" value="Odeslat"></p>
+  </form>
+
+</body>
+</html>

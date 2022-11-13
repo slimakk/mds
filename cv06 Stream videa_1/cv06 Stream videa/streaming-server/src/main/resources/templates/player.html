@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Stránka pro přehrání videa z URL</title>
+  <script type="text/javascript" th:src="@{/js/dash.all.debug.js}"></script>
+</head>
+<body>
+  <h1>Přehrávání videa z URL</h1>
+<div th:if= "${error != null}">
+  <h1 th:text="${error}" style="color: red;"></h1>
+</div>
+
+<div th:if= "${url != null}">
+<!--  Možnost s využitím th:autoplay, který vyžaduje true/false-->
+  <video th:src="${url}" th:width="${width}" poster="https://raw.githubusercontent.com/ENeMy235/MDS/main/Screen2.jpg"
+         th:autoplay="${autoplay}" th:muted="${muted}" controls></video>
+
+<!--  Možnost s attrappend, kdy předkládám hodnotu, či ne-->
+<!--  <video th:src="${url}" th:width="${width}" poster="https://raw.githubusercontent.com/ENeMy235/MDS/main/Screen2.jpg"-->
+<!--         th:attrappend="muted=${muted}, autoplay=${autoplay}" controls></video>-->
+</div>
+
+</body>
+</html>

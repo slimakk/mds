@@ -1,0 +1,28 @@
+video {
+    width: 100%;
+}
+
+.dash-video-player {
+    position: relative;  /* This position relative is needed to position the menus */
+    width: 640px;
+    margin: 0 auto;
+}
+
+#url_form
+{
+    text-align:center;
+}
+.container{width: 200px;}
+label{float: left;}
+
+#empty_name_text {
+    color: red;
+    font-size: 300%;
+    font-weight: bold;
+}
+
+#empty_url_text {
+    color: red;
+    font-size: 300%;
+    font-weight: bold;
+}

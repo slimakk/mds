@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+</head>
+<body>
+    <h2>Gallery</h2>
+    <h2>Miroslav Babela 230530</h2>
+
+    <table>
+        <tr th:each="movie: ${library}">
+            <td><a th:href="@{'video/'+${movie.getFile_name()}}"><img th:src="@{'images/'+${movie.getImage_name()}}" width="500" ></a></td>
+        </tr>
+    </table>
+</body>
+</html>

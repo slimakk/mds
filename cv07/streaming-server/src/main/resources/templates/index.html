@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+<form method='post' action='player'>
+    <label for="url"> Video URL</label>
+    <input id="url" type='text' name='url'/><br>
+
+    <label for="muted"> Muted</label>
+    <input id="muted" type="checkbox" name='muted'><br>
+
+    <label for="autoplay"> Autoplay</label>
+    <input id="autoplay" type="checkbox" name='autoplay'><br>
+
+    <label for="width"> Video width</label>
+    <input id="width" type='text' name='width'/><br>
+
+    <input type='submit' value='Play'/>
+</form>
+
+<br>
+<br>
+
+<form method='post' action='dashPlayer'>
+    <input type="radio" name="url" id="video" value="file">
+    <label for="video">Local video</label><br>
+
+    <input type="radio" name="url" id="urlVideo" value="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
+    <label for="urlVideo">Internet video</label><br>
+
+    <input type="radio" name="url" id="urlStream" value="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd">
+    <label for="urlStream">Internet stream</label><br>
+
+    <input type="radio" name="url" id="dashStream" value="dash/manifest.mpd" checked>
+    <label for="dashStream">MPEG-DASH stream</label><br>
+
+    <input type="radio" name="url" id="hlsStream" value="hls/playlist.m3u8">
+    <label for="hlsStream">HLS stream</label><br>
+
+    <input type="submit" value="Play selected stream">
+
+</form>
+
+<br>
+<br>
+
+<form>
+    <button formaction="gallery">Gallery</button>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Video galeria</title>
+    <script type="text/javascript" th:src="@{/js/dash.all.debug.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+</head>
+
+<body>
+<div th:if="${#strings.isEmpty(name)}">
+    <p id="empty_name_text">Nebylo vyplněno žádné jméno!</p>
+</div>
+
+<div th:if="${#strings.isEmpty(url)}">
+    <p id="empty_url_text">Nebyla vyplněna žádná adresa!</p>
+</div>
+
+<table class="table">
+
+    <tbody>
+    <tr th:each="videoItem : ${videoList}" th:if="${!#lists.isEmpty(videoList)}" >
+        <p><li><a th:href="@{'player?video='+${videoList.indexOf(videoItem)}}" th:text="${videoItem.name}" </a></li></p>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
